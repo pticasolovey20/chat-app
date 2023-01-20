@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    email: '',
-    password: '',
+    email: null,
+    password: null,
 }
 
 const userSlice = createSlice({
@@ -15,8 +15,8 @@ const userSlice = createSlice({
 		},
 
 		removeUser(state) {
-			state.email = '';
-			state.password = '';
+			state.email = null;
+			state.password = null;
 		},
     }
 })

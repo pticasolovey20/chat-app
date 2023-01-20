@@ -69,4 +69,98 @@
             }
         }
     }
+
+    .wrapper {
+        display: flex;
+        width: 65%;
+        height: 80%;
+
+        .sideBar {
+            flex: 2; 
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+
+            .img {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 50px 0;
+
+                img {
+                    height: 100px;
+                    width: 100px;
+                    border: 3px solid #fff;
+                    border-radius: 50%;
+                }
+
+                span {
+                    margin-top: 20px;
+                }
+            }
+
+            ul {
+                flex: 1;
+
+                li {
+                    display: flex;
+                    padding: 10px;
+                    text-align: center;
+                    line-height: 25px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    cursor: pointer;
+                    transition: all 0.15s ease-in-out;
+
+                    &:hover {
+                        color: $colorPurple;
+                        transform: translateY(-3px);
+                    }
+
+                    svg {
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            button {
+                display: flex;
+                align-items: center;    
+                justify-content: flex-start;
+                color: #fff;
+                font-size: 16px;
+                font-weight: bold;
+                letter-spacing: 1px;
+                background: none;
+                padding: 15px;
+                cursor: pointer;
+                transition: all 0.15s ease-in-out;
+
+                &:hover {
+                    color: $colorPurple;
+                    transform: translateY(-3px);
+                }
+
+                svg {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .chatBar {
+            flex: 2.5; 
+            border: 1px solid #fff;
+        }
+
+        .chatWrapper {
+            flex: 5; 
+            border: 1px solid #fff;
+        }
+    }
 }
