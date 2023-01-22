@@ -75,87 +75,180 @@
         width: 65%;
         height: 80%;
 
-        .sideBar {
-            flex: 2; 
+        .sideBar,
+        .openSideBar {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            color: #fff;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
-
-            .img {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 50px 0;
-
-                img {
-                    height: 100px;
-                    width: 100px;
-                    border: 3px solid #fff;
-                    border-radius: 50%;
-                }
-
-                span {
-                    margin-top: 20px;
-                }
-            }
+            overflow: hidden;
 
             ul {
                 flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
 
                 li {
                     display: flex;
-                    padding: 10px;
-                    text-align: center;
-                    line-height: 25px;
-                    font-size: 18px;
-                    font-weight: bold;
-                    letter-spacing: 1px;
-                    cursor: pointer;
-                    transition: all 0.15s ease-in-out;
-
-                    &:hover {
-                        color: $colorPurple;
-                        transform: translateY(-3px);
-                    }
-
-                    svg {
-                        margin-right: 10px;
-                    }
+                    align-items: center
                 }
+            }
+        }
+
+        .img {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 0;
+    
+            img {
+                height: 80px;
+                width: 80px;
+                border: 3px solid #fff;
+                border-radius: 50%;
+            }
+    
+            span {
+                margin-top: 20px;
+            }
+        }
+
+        svg {
+            color: #fff;
+            height: 30px;
+            width: 30px;
+            margin-right: 13px;
+            cursor: pointer;
+        }
+
+        span {
+            color: #fff;
+            font-size: 18px;
+            letter-spacing: 1px;
+            line-height: 25px;
+        }
+
+        li:hover, button:hover {
+            svg, span {
+                color: $colorPurple;
+                cursor: pointer;
+            }
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            background: none;
+        }
+
+        .sideBar {
+            width: 55px;
+            padding-left: 12px;
+
+            ul {padding-top: 15px;}
+
+            .img {display: none;}
+        }
+
+        .openSideBar {
+            flex: 1.5;
+
+            ul {
+                padding: 30px 0 0 10px;
             }
 
             button {
-                display: flex;
-                align-items: center;    
-                justify-content: flex-start;
-                color: #fff;
-                font-size: 16px;
-                font-weight: bold;
-                letter-spacing: 1px;
-                background: none;
-                padding: 15px;
-                cursor: pointer;
-                transition: all 0.15s ease-in-out;
-
-                &:hover {
-                    color: $colorPurple;
-                    transform: translateY(-3px);
-                }
-
-                svg {
-                    margin-right: 10px;
-                }
+                padding: 0 0 10px 10px;
             }
         }
 
         .chatBar {
             flex: 2.5; 
-            border: 1px solid #fff;
+            color:white;
+            padding: 10px 10px 0 10px;
+            background-color: $colorGrey;
+            overflow: scroll;
+
+            .menu {
+                display: flex;
+                align-items: center;
+                padding-top: 30px;
+                gap: 10px;
+
+                h2 {
+                    color: #fff;
+                    font-size: 30px;
+                }
+
+                svg {
+                    height: 40px;
+                    width: 40px;
+                    color: #fff;
+
+                    &:hover {
+                        color: $colorPurple;
+                    }
+                }
+            }
+            .chatBarWrapper {
+                display: flex;
+                flex-direction: column;
+                margin-top: 30px;
+
+                .inputWrapper {
+                    display: flex;
+                    align-items: center;
+                    padding:10px;
+                    margin-bottom: 30px;
+                    box-shadow: 5px 5px 20px darken($colorGrey, 15);
+
+                    input {
+                        height: 100%;
+                        width: 100%;
+                        color: #fff;
+                        font-size: 16px;
+                        letter-spacing: 1px;
+                        background: none;
+
+                        &::placeholder {
+                            color: #fff;
+                            font-size: 16px;
+                        }
+                    }
+                }
+
+                .chatItem {
+                    display: flex;
+                    align-items: center;
+                    padding: 10px 0 10px 10px;
+                    cursor: pointer;
+
+                    img {
+                        height: 40px;
+                        width: 40px;
+                        margin-right: 20px;
+                        border-radius: 50%;
+                        border: 2px solid #fff;
+                    }
+
+                    .text {
+                        display: flex;
+                        flex-direction: column;
+
+                        span {
+                            white-space:nowrap;
+                            overflow:hidden;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: lighten($colorGrey, 5);
+                    }
+                }
+            }
         }
 
         .chatWrapper {
